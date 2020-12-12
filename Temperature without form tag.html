@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body
+	{
+		font-family:ubuntu;
+	}
+h3
+{
+	color:#00cccc;
+	font-size:40px;
+}
+::placeholder
+{
+	font-size:15px;
+}
+.alltem
+{
+	background-color:#ccffff;
+	padding:25px;
+	margin:25px;
+}
+.farcel
+{
+	color:#00cccc;
+	padding-right:10px;
+	font-size:20px;
+
+}
+#con
+{
+	border:none;
+	background-color: #00cccc;
+	color:white;
+	font-size:18px;
+	height: 50px;
+	width:30%;
+	margin-top:25px;
+	border-radius:5px;
+	cursor:pointer;
+	margin-left:15px;
+	outline:none;
+}
+#con:hover
+{
+	border:2px solid #00cccc;
+	background-color: inherit;
+	color:#00cccc;
+}
+#far,#cel
+	{
+		height:30px;
+		font-size:20px;
+		width:20%;
+		text-align:center;
+		border:none;
+		background-color:inherit;
+		border-bottom:2px solid #00cccc;
+		color:#00cccc;
+		outline: none;
+	}
+#far
+</style>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body align="center">
+
+<div class="alltem">
+<h3>Fahrenheit <i class="fas fa-exchange-alt"></i> Celsius</h3>
+<div class="inputboxes"><span class="farcel"><sup>o</sup>F</span><input type="varchar" id="far" placeholder="Fahrenheit" onfocus="this.placeholder=''" onblur="this.placeholder='Fahrenheit'" onclick="clr()"></div><br>
+<div class="inputboxes"><span class="farcel"><sup>o</sup>C</span><input type="varchar" id="cel" placeholder="Celsius" onfocus="this.placeholder=''" onblur="this.placeholder='Celsius'" onclick="clr()"></div><br>
+
+<button id="con" onclick="con()">Convert</button>
+</div>
+
+<script type="text/javascript">
+
+function con()
+{
+	var far=document.getElementById("far").value;
+	var cel=document.getElementById("cel").value;
+	var x,y,p,q;
+
+		if(far==false)
+	{
+		x=document.getElementById('cel').value;
+		y=parseFloat((9/5)*(parseFloat(x)) + 32);
+		document.getElementById('far').value = y;
+	}
+			else if(cel==false)
+	{
+		p=document.getElementById('far').value;
+		q=parseFloat(5*(parseFloat(p)-32)/9);
+		document.getElementById('cel').value = q;
+	}
+		else
+	{
+		cel="";
+		far="";
+	}
+
+}
+function clr()
+{
+		document.getElementById("far").value="";
+		document.getElementById("cel").value="";
+}
+
+</script>
+</body>
+</html>
